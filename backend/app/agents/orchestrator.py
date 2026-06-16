@@ -252,6 +252,27 @@ async def process_query(
     response.answer = _assemble_answer(
         message, intent, data, insights, risk, recs, policy_context
     )
+
+    # ── Generate conversational voice text via LLM ────────
+    if not response.voice_text and llm and llm.is_available:
+        try:
+            voice_system = (
+                "You are a friendly financial AI assistant speaking out loud. "
+                "Convert the following analysis into 2-3 natural spoken sentences — "
+                "like how a smart colleague would explain it verbally. "
+                "No bullet points, no markdown, no symbols. "
+                "Speak directly and conversationally. Start with the key number or finding."
+            )
+            voice_user = (
+                f"User asked: {message}\n\n"
+                f"Analysis summary: {insights.headline}. "
+                f"{insights.pattern_description}"
+            )
+            voice_raw = await llm.complete(voice_system, voice_user)
+            if voice_raw:
+                response.voice_text = voice_raw.strip()
+        except Exception:
+            pass
     response.chart  = data.chart
     response.reasoning_steps = steps
     response.data_used = {
