@@ -8,7 +8,7 @@ __pycache__/
 dist/
 build/
 .eggs/
-data/
+# only ignore generated data files, NOT source code under app/data/
 *.csv
 *.pkl
 *.joblib
