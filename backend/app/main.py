@@ -26,54 +26,68 @@ llm_client = None
 rag        = None
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
+def sync_startup_tasks():
     global llm_client, rag
     logger.info("=" * 60)
-    logger.info("FinSight AI — Starting up …")
+    logger.info("FinSight AI — Starting heavy ML tasks in background …")
     logger.info("=" * 60)
 
-    # 1. Dataset
-    logger.info("Step 1/5 — Loading and preparing dataset …")
-    from app.analytics.data_loader import load_and_prepare, state
-    load_and_prepare(n_records=30_000, seed=42)
+    try:
+        # 1. Dataset
+        logger.info("Step 1/5 — Loading and preparing dataset …")
+        from app.analytics.data_loader import load_and_prepare, state
+        load_and_prepare(n_records=30_000, seed=42)
 
-    # 2. ML model + SHAP
-    logger.info("Step 2/5 — Training ML model and computing SHAP …")
-    from app.analytics.ml_model import train_model, build_shap_explainer
-    model, metrics = train_model(state.df_ml)
-    state.model         = model
-    state.model_metrics = metrics
-    explainer, shap_vals, feat_imp = build_shap_explainer(model, state.df_ml)
-    state.shap_explainer     = explainer
-    state.shap_values_sample = shap_vals
-    state.feature_importance = feat_imp
+        # 2. ML model + SHAP
+        logger.info("Step 2/5 — Training ML model and computing SHAP …")
+        from app.analytics.ml_model import train_model, build_shap_explainer
+        model, metrics = train_model(state.df_ml)
+        state.model         = model
+        state.model_metrics = metrics
+        explainer, shap_vals, feat_imp = build_shap_explainer(model, state.df_ml)
+        state.shap_explainer     = explainer
+        state.shap_values_sample = shap_vals
+        state.feature_importance = feat_imp
 
-    # 3. Anomaly detection
-    logger.info("Step 3/5 — Running anomaly detection …")
-    from app.analytics.anomaly_detection import run_anomaly_detection
-    anomaly_result       = run_anomaly_detection(state.df_clean)
-    state.anomaly_scores = anomaly_result["anomaly_scores"]
-    state.anomaly_flags  = anomaly_result["anomaly_flags"]
+        # 3. Anomaly detection
+        logger.info("Step 3/5 — Running anomaly detection …")
+        from app.analytics.anomaly_detection import run_anomaly_detection
+        anomaly_result       = run_anomaly_detection(state.df_clean)
+        state.anomaly_scores = anomaly_result["anomaly_scores"]
+        state.anomaly_flags  = anomaly_result["anomaly_flags"]
 
-    # 4. RAG
-    logger.info("Step 4/5 — Indexing policy documents …")
-    from app.rag.document_store import DocumentStore
-    rag = DocumentStore()
-    rag.load_all_docs()
+        # 4. RAG
+        logger.info("Step 4/5 — Indexing policy documents …")
+        from app.rag.document_store import DocumentStore
+        rag_instance = DocumentStore()
+        rag_instance.load_all_docs()
+        rag = rag_instance
 
-    # 5. LLM
-    logger.info("Step 5/5 — Initialising LLM client …")
-    from app.agents.llm_client import LLMClient
-    llm_client = LLMClient()
+        # 5. LLM
+        logger.info("Step 5/5 — Initialising LLM client …")
+        from app.agents.llm_client import LLMClient
+        llm_instance = LLMClient()
+        llm_client = llm_instance
 
-    state.ready = True
-    logger.info(
-        f"✅ FinSight AI ready — {len(state.df_clean):,} records | "
-        f"LLM: {llm_client.provider} | RAG: {len(rag.documents)} chunks"
-    )
+        state.ready = True
+        logger.info(
+            f"✅ FinSight AI ready — {len(state.df_clean):,} records | "
+            f"LLM: {llm_client.provider} | RAG: {len(rag.documents)} chunks"
+        )
+    except Exception as e:
+        logger.error(f"❌ Background startup failed: {e}", exc_info=True)
     logger.info("=" * 60)
 
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    import threading
+    
+    logger.info("FastAPI server starting, offloading ML prep to thread...")
+    # Start ML training in a background thread so the server opens its port instantly
+    thread = threading.Thread(target=sync_startup_tasks, daemon=True)
+    thread.start()
+    
     yield
 
     logger.info("FinSight AI — Shutting down.")
