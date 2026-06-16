@@ -256,18 +256,46 @@ async def process_query(
     # ── Generate conversational voice text via LLM ────────
     if not response.voice_text and llm and llm.is_available:
         try:
-            voice_system = (
-                "You are a friendly financial AI assistant speaking out loud. "
-                "Convert the following analysis into 2-3 natural spoken sentences — "
-                "like how a smart colleague would explain it verbally. "
-                "No bullet points, no markdown, no symbols. "
-                "Speak directly and conversationally. Start with the key number or finding."
+            import re as _re
+            # Detect Hindi: Devanagari script or common Hindi romanized words
+            hindi_pattern = _re.compile(
+                r'[ऀ-ॿ]|'
+                r'\b(kya|hai|mera|meri|ka|ki|ko|se|aaj|kal|kitna|kitni|batao|bolo|'
+                r'hota|hoti|karo|kaise|kaun|kahan|kyun|woh|yeh|aur|nahi|haan|'
+                r'theek|bahut|bohot|accha|zyada|kam|sab|kuch|paise|rupay|'
+                r'sabse|sab|mujhe|humara|portfolio|segment|default)\b',
+                _re.IGNORECASE
             )
-            voice_user = (
-                f"User asked: {message}\n\n"
-                f"Analysis summary: {insights.headline}. "
-                f"{insights.pattern_description}"
-            )
+            is_hindi = bool(hindi_pattern.search(message))
+
+            if is_hindi:
+                voice_system = (
+                    "Aap ek friendly financial AI assistant hain jo bol rahi hain. "
+                    "Neeche diye gaye analysis ko 2-3 natural, conversational Hindi sentences mein convert karein — "
+                    "jaise ek samajhdar dost explain karta hai. "
+                    "Koi bullet points, markdown, ya symbols nahi. "
+                    "Seedha aur friendly andaaz mein bolein. Sabse important number ya finding se shuru karein. "
+                    "Sirf Roman script mein Hindi likhein (Hinglish)."
+                )
+                voice_user = (
+                    f"User ne pucha: {message}\n\n"
+                    f"Analysis summary: {insights.headline}. "
+                    f"{insights.pattern_description}"
+                )
+            else:
+                voice_system = (
+                    "You are a friendly financial AI assistant speaking out loud. "
+                    "Convert the following analysis into 2-3 natural spoken sentences — "
+                    "like how a smart colleague explains it verbally. "
+                    "No bullet points, no markdown, no symbols. "
+                    "Speak directly and conversationally. Start with the key number or finding."
+                )
+                voice_user = (
+                    f"User asked: {message}\n\n"
+                    f"Analysis summary: {insights.headline}. "
+                    f"{insights.pattern_description}"
+                )
+
             voice_raw = await llm.complete(voice_system, voice_user)
             if voice_raw:
                 response.voice_text = voice_raw.strip()
