@@ -1,0 +1,148 @@
+FINSIGHT BUSINESS RULES & OPERATIONAL PROCEDURES
+Version 1.8 | Effective: January 2024
+Classification: Internal Use Only — Operations & Compliance
+
+1. LOAN PROCESSING RULES
+
+1.1 Application Processing TAT (Turnaround Time)
+- Personal Loan (salaried, pre-approved): 4 hours
+- Personal Loan (standard): 3 business days
+- Vehicle Loan: 2 business days
+- Home Loan: 10–15 business days
+- Business Loan: 7–10 business days
+- Education Loan: 5 business days
+
+TAT breach >20% in any month triggers process review.
+
+1.2 Mandatory Checks
+ALL loan applications must undergo the following before approval:
+a) CIBIL bureau check (mandatory; not waivable)
+b) CIBIL Equifax cross-check (for loans >INR 10L)
+c) Anti-money laundering (AML) screening
+d) PEP (Politically Exposed Person) check
+e) CKYC (Central KYC) verification
+f) Income verification (bank statement analysis)
+g) Employment/business verification (for loans >INR 5L)
+
+1.3 Duplicate Application Check
+System automatically flags if same applicant (PAN-based) has:
+- Active application at another branch: Hold for 48 hours, verify intent
+- Application rejected in last 6 months: Require Senior UW approval
+- Active loan with 30+ DPD: Automatic decline; no exceptions
+
+2. LOAN FLAGGING RULES
+
+2.1 Automatic Flag Triggers
+A loan application is automatically flagged for enhanced review if ANY of the following apply:
+- CIBIL score < 620
+- DTI ratio > 45%
+- Previous defaults ≥ 2
+- Credit utilisation > 75% on existing cards
+- Income-to-loan ratio < 0.15 (annual income less than 15% of loan amount)
+- Age of borrower > 65 at loan maturity
+- Application from a state with >13% default rate in last 12 months
+- Self-employed with <3 years business vintage
+- Loan purpose: Speculative investment (stocks, crypto)
+
+2.2 Fraud Indicator Rules
+Immediate escalation to Fraud Control Unit if:
+- Address mismatch between application and KYC documents
+- Employer phone number does not match corporate directory
+- Income claimed significantly higher than industry norms for stated job role
+- Multiple applications with identical income/employment details (possible identity fraud)
+- Bank statement shows large cash deposits preceding application (possible income manipulation)
+
+3. INTEREST RATE RULES
+
+3.1 Base Rate Determination
+Interest rates are set monthly by the Asset-Liability Committee (ALCO) based on:
+- RBI repo rate + spread
+- Cost of funds
+- Credit risk premium
+- Market competitive positioning
+
+3.2 Customer-Level Rate Setting
+Final rate = Base Rate + Risk Premium (per CIBIL tier) + Product Premium + Negotiation Discount
+Maximum negotiation discount: 0.50% (for CIBIL >750, relationship customers)
+Minimum rate floor: No loan below MCLR (marginal cost of lending rate)
+
+4. LOAN RESTRUCTURING RULES
+
+4.1 Eligibility for Restructuring
+A loan may be restructured if:
+- Borrower demonstrates genuine financial hardship (job loss, medical emergency, business disruption)
+- Account is Standard or Substandard (not Doubtful or Loss)
+- Borrower has made at least 12 EMI payments
+- No previous restructuring in the last 36 months
+
+4.2 Restructuring Options
+a) EMI holiday: Maximum 3 months; interest continues to accrue
+b) Repayment extension: Maximum 24 months additional tenure
+c) Interest rate reduction: Maximum 1.50% reduction; requires Credit Manager approval
+d) Partial settlement: Subject to Board approval; minimum 80% principal recovery
+
+5. COLLECTIONS RULES
+
+5.1 Collection Escalation Matrix
+- 0–7 DPD: Automated SMS and email reminders
+- 8–15 DPD: Outbound call from collections team; offer repayment plan
+- 16–30 DPD: Senior collections officer; home visit for loans >INR 5L
+- 31–60 DPD: Restructuring assessment; legal notice served for secured loans
+- 61–90 DPD: Recovery team engagement; field visit mandatory
+- 90+ DPD: NPA classification; legal proceedings initiated
+
+5.2 Customer Communication Standards
+All customer communication must:
+- Comply with RBI Fair Practices Code
+- Not be made between 8 PM and 8 AM
+- Not involve threats, intimidation, or public shaming
+- Be conducted in language preferred by customer
+- Be documented in CRM system within 24 hours
+
+6. DATA AND REPORTING RULES
+
+6.1 Bureau Reporting
+- All accounts must be reported to CIBIL, Equifax, and Experian monthly
+- Delinquency status updated within 45 days of each period end
+- Corrections to bureau data must be processed within 30 days of customer dispute
+
+6.2 Regulatory Reporting
+- Monthly: Portfolio MIS to Board Risk Committee
+- Quarterly: NPA and provision report to RBI
+- Semi-annual: Credit risk model performance report
+- Annual: Full portfolio audit by external rating agency
+
+6.3 Data Retention
+Customer data retained for 8 years post loan closure per RBI data localisation norms.
+Sensitive data (KYC, bank statements) encrypted at rest using AES-256.
+
+7. VOICE ASSISTANT & AI SYSTEM RULES
+
+7.1 AI-Assisted Decision Making
+The FinSight AI assistant is classified as a Decision Support System (DSS), not an autonomous decision system. All AI-generated recommendations require human review before implementation.
+
+7.2 AI Query Handling Rules
+- The system may answer portfolio-level analytical queries
+- Individual customer PII (name, address, phone) must not be returned in AI responses
+- Risk scores generated by AI models must carry uncertainty bands
+- AI responses must indicate data source and confidence level
+
+7.3 Voice Interface Guidelines
+- Voice queries are processed with consent; recordings not stored beyond session
+- Transcription may be used for quality improvement with customer consent
+- Voice responses use synthesised speech; no cloning of human voices
+
+8. COMPLIANCE AND AUDIT
+
+8.1 Policy Compliance
+Deviation from any rule in this document requires:
+- Written justification
+- Approval from authority one level above normal
+- Documentation in exception register (retained 3 years)
+
+8.2 Audit Rights
+Internal Audit has unrestricted access to all loan files, system logs, and decision records.
+Annual surprise audits conducted on minimum 5% of portfolio.
+
+Last updated by: Chief Operating Officer
+Date: January 2024 | Review cycle: Semi-annual

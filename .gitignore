@@ -1,0 +1,37 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Data files (generated at runtime)
+backend/data/*.csv
+backend/data/*.pkl
+backend/data/*.joblib
+
+# Frontend build
+frontend/node_modules/
+frontend/dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Temp upload script
+upload_to_github.py

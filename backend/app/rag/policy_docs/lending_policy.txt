@@ -1,0 +1,105 @@
+FINSIGHT LENDING POLICY DOCUMENT
+Version 3.2 | Effective: January 2024
+Classification: Internal Use Only
+
+1. LOAN ELIGIBILITY CRITERIA
+
+1.1 Minimum Requirements
+All applicants must meet the following baseline criteria to be eligible for loan consideration:
+- Minimum age: 21 years; Maximum age at loan maturity: 70 years
+- Minimum annual income: INR 1,80,000 (Rupees One Lakh Eighty Thousand)
+- Minimum CIBIL credit score: 600 (for standard products); 550 (for secured products with guarantor)
+- Indian resident or NRI with Indian source of income
+- Valid KYC documents: PAN, Aadhaar, address proof
+
+1.2 Debt-to-Income Ratio (DTI) Limits
+The maximum allowable DTI ratio for new loan approvals is:
+- Home Loans: 45%
+- Personal Loans: 40%
+- Vehicle Loans: 42%
+- Business Loans: 50% (with audited financials for 2+ years)
+- Education Loans: 35% (post-disbursement income considered)
+Applications with DTI exceeding these thresholds require Senior Underwriter approval.
+
+1.3 Loan Amount Limits by Product
+- Personal Loan: Minimum INR 50,000; Maximum INR 25,00,000
+- Home Loan: Minimum INR 5,00,000; Maximum INR 5,00,00,000 (subject to LTV)
+- Vehicle Loan: Minimum INR 1,00,000; Maximum INR 50,00,000
+- Business Loan: Minimum INR 2,00,000; Maximum INR 2,00,00,000 (with financials)
+- Education Loan: Minimum INR 50,000; Maximum INR 75,00,000
+
+2. CREDIT SCORING TIERS
+
+2.1 CIBIL Score Bands and Applicable Interest Rate Premiums
+- Score 800-900 (Excellent): Base rate applicable; auto-approve if other criteria met
+- Score 750-799 (Very Good): Base rate + 0.25%; standard processing
+- Score 700-749 (Good): Base rate + 0.75%; standard processing
+- Score 650-699 (Fair): Base rate + 1.50%; additional income verification required
+- Score 600-649 (Marginal): Base rate + 2.50%; guarantor or collateral required
+- Score 550-599 (Poor): Base rate + 4.00%; secured products only; Senior UW approval
+- Score below 550: Decline; refer to credit rehabilitation programme
+
+3. LOAN-TO-VALUE (LTV) RATIOS
+- Residential property (self-occupied): Maximum 80% LTV
+- Residential property (investment): Maximum 70% LTV
+- Commercial property: Maximum 65% LTV
+- Vehicle (new): Maximum 90% LTV
+- Vehicle (used, <3 years): Maximum 75% LTV
+- Vehicle (used, 3-7 years): Maximum 60% LTV
+
+4. DOCUMENTATION REQUIREMENTS
+
+4.1 Salaried Applicants
+- Last 3 months salary slips
+- Last 6 months bank statements
+- Form 16 / ITR for last 2 years
+- Employer letter (if income >INR 15L per annum)
+
+4.2 Self-Employed / Business Owners
+- Last 2 years ITR with computation
+- Last 2 years audited financials (if turnover >INR 40L)
+- Last 12 months bank statements (all accounts)
+- Business registration certificate
+- GST registration (if applicable)
+
+5. PRODUCT-SPECIFIC POLICIES
+
+5.1 Personal Loans
+- Minimum 6 months employment continuity with current employer (salaried)
+- No more than 2 active unsecured loans at time of application
+- Minimum 2 years in business (self-employed)
+- Maximum loan tenure: 60 months
+
+5.2 Home Loans
+- Property must be legally clear; title search mandatory
+- Technical valuation mandatory; bank-approved valuer list applies
+- MODT / equitable mortgage required for all home loans
+- Maximum tenure: 30 years (subject to retirement age)
+
+5.3 Business Loans
+- Business must be operational for minimum 3 years
+- Last 2 years should be profit-making
+- All directors/partners to be co-applicants
+- Working capital and term loan requirements to be assessed separately
+
+6. APPROVAL AUTHORITY MATRIX
+
+| Loan Amount        | Approval Authority          |
+|-------------------|-----------------------------|
+| Up to INR 5L      | Junior Underwriter          |
+| INR 5L – 25L      | Senior Underwriter          |
+| INR 25L – 100L    | Credit Manager              |
+| INR 100L – 500L   | Chief Credit Officer        |
+| Above INR 500L    | Credit Committee (quorum)   |
+
+7. EXCEPTIONS AND DEVIATIONS
+
+7.1 Deviation Policy
+Any deviation from standard policy requires documented justification and approval one level higher than normal authority.
+Maximum 2 deviations permitted per file; no deviations on KYC non-compliance.
+
+7.2 Geographic Restrictions
+Loans in flood-prone, seismic zone IV/V, or areas under legal dispute require additional due diligence and 10% additional margin on LTV.
+
+8. POLICY REVIEW
+This policy is reviewed annually by the Credit Policy Committee. Last review: December 2023. Next review: December 2024.

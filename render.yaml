@@ -1,0 +1,29 @@
+services:
+  # ── Backend ─────────────────────────────────────────────
+  - type: web
+    name: finsight-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    rootDir: backend
+    healthCheckPath: /health
+    envVars:
+      - key: MISTRAL_API_KEY
+        sync: false          # set manually in Render dashboard
+      - key: FRONTEND_URL
+        sync: false          # set to your Render frontend URL after deploying
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+
+  # ── Frontend ─────────────────────────────────────────────
+  - type: web
+    name: finsight-frontend
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npx serve -s dist -l $PORT
+    rootDir: frontend
+    envVars:
+      - key: VITE_API_URL
+        sync: false          # set to https://finsight-backend.onrender.com
+      - key: NODE_VERSION
+        value: "20.0.0"

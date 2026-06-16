@@ -1,0 +1,129 @@
+FINSIGHT RISK MANAGEMENT GUIDELINES
+Version 2.1 | Effective: March 2024
+Classification: Internal Use Only — Risk & Compliance
+
+1. RISK FRAMEWORK OVERVIEW
+
+FinSight operates a three-tier risk management framework aligned with RBI guidelines on credit risk management for Non-Banking Financial Companies (NBFCs) and scheduled commercial banks.
+
+The framework covers:
+- Credit Risk: Risk of borrower default
+- Concentration Risk: Excessive exposure to one segment or geography  
+- Operational Risk: Process failures in origination or servicing
+- Model Risk: Errors in credit scoring and decisioning models
+
+2. CREDIT RISK TIERS
+
+2.1 Risk Classification Matrix
+All active loan accounts are classified into four risk tiers based on a combination of CIBIL score, DTI ratio, credit utilisation, and payment behaviour:
+
+TIER 1 — GREEN (LOW RISK)
+Criteria: CIBIL ≥ 720, DTI < 30%, Credit utilisation < 40%, No previous defaults
+Expected Default Rate: < 5%
+Action: Standard monitoring; quarterly review
+
+TIER 2 — AMBER (MEDIUM RISK)
+Criteria: CIBIL 650–719, DTI 30–40%, Credit utilisation 40–65%, ≤ 1 previous default
+Expected Default Rate: 5%–12%
+Action: Enhanced monitoring; monthly portfolio review; proactive outreach at 15 DPD
+
+TIER 3 — RED (HIGH RISK)
+Criteria: CIBIL 550–649, DTI 40–55%, Credit utilisation 65–80%, 1–2 previous defaults
+Expected Default Rate: 12%–25%
+Action: Intensive monitoring; weekly DPD tracking; restructuring assessment at 30 DPD; field visit at 60 DPD
+
+TIER 4 — BLACK (CRITICAL RISK)
+Criteria: CIBIL < 550, DTI > 55%, Credit utilisation > 80%, 2+ previous defaults
+Expected Default Rate: > 25%
+Action: Immediate escalation to Recovery; legal action assessment at 90 DPD; NPA classification at 90 DPD
+
+3. CONCENTRATION RISK LIMITS
+
+3.1 Geographic Concentration
+- No single state should exceed 20% of total portfolio value
+- Alert threshold: 15% — triggered for enhanced monitoring
+- States currently under watch: Maharashtra (current exposure: 15.2%)
+- Maximum district concentration: 5% of portfolio
+
+3.2 Segment Concentration
+- No single customer segment should exceed 30% of total portfolio count
+- Young Professional segment currently at 28% — monitoring threshold active
+- Self-Employed / Freelancer combined exposure capped at 25%
+
+3.3 Product Concentration
+- Personal Loans (unsecured): Maximum 35% of portfolio
+- Currently at 30% — within limits but approaching threshold
+
+4. EARLY WARNING INDICATORS (EWIs)
+
+The following triggers initiate enhanced monitoring and customer outreach:
+
+4.1 Behavioural Indicators
+- Missed EMI (1 instance): SMS + call outreach within 48 hours
+- Missed EMI (2 consecutive): Personal contact + repayment plan offer
+- High credit card utilisation spike (>80%): Early warning flag
+- Multiple new credit enquiries (>3 in 30 days): Stress indicator
+- Drop in CIBIL score by >30 points: Alert to Relationship Manager
+
+4.2 Macroeconomic Triggers
+- State-level unemployment rate increase >2pp: Portfolio review for affected states
+- RBI rate hike >50bps: Stress test on floating rate loans
+- Inflation >6% for 3 consecutive months: Income erosion assessment
+
+5. PORTFOLIO STRESS TESTING
+
+5.1 Quarterly Stress Tests
+Mandatory stress tests are run quarterly on the full portfolio under three scenarios:
+
+BASELINE: Current economic conditions
+- Expected annual default rate: 10–13%
+- Required capital buffer: As per regulatory minimum
+
+ADVERSE: Moderate economic stress (GDP growth -1%, unemployment +2pp)
+- Expected annual default rate: 16–20%
+- Required capital buffer: +25% above baseline
+
+SEVERE: Severe economic downturn (GDP growth -3%, unemployment +5pp)
+- Expected annual default rate: 24–30%
+- Required capital buffer: +50% above baseline
+
+5.2 Segment-Specific Stress Tests
+High-risk segments (Young Professionals, Freelancers, Maharashtra region) undergo monthly stress testing due to elevated baseline risk.
+
+6. NON-PERFORMING ASSET (NPA) MANAGEMENT
+
+6.1 NPA Classification (per RBI guidelines)
+- Substandard: 1–12 months overdue
+- Doubtful: 12–36 months overdue
+- Loss: 36+ months overdue (or unrecoverable per legal assessment)
+
+6.2 Provisioning Requirements
+- Standard assets: 0.40% provisioning
+- Substandard assets: 15% provisioning
+- Doubtful (up to 12 months): 25%
+- Doubtful (12–36 months): 40%
+- Doubtful (>36 months): 100%
+- Loss assets: 100% provisioning
+
+7. MODEL GOVERNANCE
+
+7.1 Credit Scoring Model Review
+All credit risk models must be:
+- Validated annually by an independent model validation team
+- Back-tested against actual default outcomes quarterly
+- Reviewed for bias (demographic, geographic) semi-annually
+- Documented with assumptions, limitations, and known failure modes
+
+7.2 Model Override Policy
+Human underwriters may override model decisions but must document reasons. Override rates are monitored: >15% override rate triggers model recalibration review.
+
+8. REGULATORY COMPLIANCE
+
+All risk management practices comply with:
+- RBI Master Directions on Credit Risk (2023)
+- Basel III capital adequacy norms
+- SEBI LODR requirements (for listed entities)
+- NBFC-Scale Based Regulation (SBR) Framework
+
+Last reviewed by: Chief Risk Officer
+Date: February 2024 | Next review: August 2024

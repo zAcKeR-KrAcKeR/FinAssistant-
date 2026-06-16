@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+pandas
+numpy
+scikit-learn
+shap
+plotly
+python-dotenv
+pydantic>=2.9.0
+pydantic-settings
+mistralai
+openai
+httpx
+scipy
+python-multipart
+joblib
+sse-starlette

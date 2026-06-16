@@ -1,0 +1,15 @@
+*.pyc
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+*.egg-info/
+dist/
+build/
+.eggs/
+data/
+*.csv
+*.pkl
+*.joblib
+.DS_Store
