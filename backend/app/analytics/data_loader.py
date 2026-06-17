@@ -15,7 +15,7 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
-from app.data.generate_dataset import generate_dataset
+from app.analytics.generate_dataset import generate_dataset
 
 logger = logging.getLogger(__name__)
 
